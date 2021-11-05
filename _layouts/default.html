@@ -1,11 +1,28 @@
 <!doctype html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/custom.css">
+    <link rel="icon" type="image/png" href="{{site.baseurl}}/assets/favicon.ico">
   </head>
   <body>
-    {% include navigation.html %}
-    {{ content }}
+    <div>
+      {% include navigation.html %}
+    </div>
+    <div class="columns is-centered" id="body">
+      <div class="column">
+        <div class="content">
+          <section class="section"/>
+            {{ content }}
+          </section>
+        </div>
+      </div>
+    </div>
   </body>
+  <div>
+    {% include footer.html %}
+  </div>
 </html>

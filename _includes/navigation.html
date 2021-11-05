@@ -1,11 +1,34 @@
-<nav>
-    <a href="/"{% if page.url == "/"%} style=color:red;"{% endif %}>
-        Home
+<nav class="navbar is-light is-spaced" role="navigation" ari-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <strong>Kyle Cooper</strong>
+      <!--<img src="TODO an image here with name in white and blue background would be nice?" width="112" height="28"> -->
     </a>
-    <a href="/about.html"{% if page.url == "/about.html"%} style=color:red;"{% endif %}>
-        About
-    </a>
-    <a href="/posts.html"{% if page.url == "/posts.html"%} style=color:red;"{% endif %}>
-       Posts 
-    </a>
+    <!--
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="site-navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>--> 
+  </div>
+  <div id="site-navbar" class="navbar-menu is-light">
+    <div class="navbar-start">
+      <a href="/"{% if page.url == "/"%} style=color:red;"{% endif %} class="navbar-item">
+          Home
+      </a>
+      <a href="/about.html"{% if page.url == "/about.html"%} class="navbar-item is-active";"{% endif %} class="navbar-item">
+          About
+      </a>
+      <a href="/posts.html" {% if page.url == "/posts.html"%} style=color:red;"{% endif %} class="navbar-item">
+         Posts
+      </a>
+      <a href="/notes.html"{% if page.url == "/notes.html"%} style=color:red;"{% endif %} class="navbar-item">
+        Notes
+      </a>
+      <a href="/projects.html"{% if page.url == "/projects.html"%} style=is-active ;"{% endif %} class="navbar-item">
+        Projects
+      </a>
+    </div class="navbar-end">
+  </div>
 <nav>

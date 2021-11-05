@@ -5,16 +5,21 @@ title: Posts
 
 ---
 
-<ul> 
-    {% for post in site.posts %} 
-    <li>
-        <h2>
-            <a href="{{post.url }}">
-                {{ post.title}}
-            </a>
-        </h2>
-    </li>
-    {% endfor %}
-</ul> 
-
-
+{% for post in site.posts %} 
+{% if post.categories contains 'blog' %}
+    <div class="card p-0 m-5 has-background-light">
+        <div class="card-content">
+            <div class="content">
+                <h2 class="has-text-centered">
+                <a href="{{ post.url }}">
+                {{ post.title }}
+                </a>
+                </h2>
+                <p class="has-text-left">
+                    {{ post.excerpt }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endfor %}

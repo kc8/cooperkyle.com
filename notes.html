@@ -1,0 +1,32 @@
+---
+
+layout: default
+title: Notes 
+
+---
+<p>
+    My notes are un-formatted items that I 
+    thought were interesting enough to add here
+    I am not sure if they are good or not. They might contain 
+    typos/grammar errors or in-accuracies. Feel free to let 
+    me know if you find anything... bad.
+</p>
+
+{% for cat in site.posts %} 
+{% if cat.categories contains 'notes' %}
+    <div class="card p-0 m-5 has-background-light">
+        <div class="card-content">
+            <div class="content">
+                <h2 class="has-text-centered">
+                <a href="{{ cat.url }}">
+                {{ cat.title }}
+                </a>
+                </h2>
+                <p class="has-text-left">
+                    {{ cat.excerpt }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endfor %}
