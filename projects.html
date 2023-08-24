@@ -3,8 +3,7 @@
     title: Projects 
 ---
 
-<h1>Curent and Past Projects</h1>
-<p><strong>These are some older proejcts, I am currently working in C to explore game development</strong></p> 
+<h1>Current and Past Projects</h1>
     <div class="card p-0 m-5 has-background-light">
         <div class="card-content">
             <div class="content">
@@ -20,8 +19,12 @@
                     Using some temperature sensors and resistance sensors we are able to measure different environmental factors in a garden.
                     Using a Raspberry Pi with sensors we can monitor things like temperature, soil moisture and more. 
                     The data gets sent a real time database were its then updated on the website below.
-                <a target="_blank" href="https://sensorgarden.cooperkyle.com/">Have a look at the data here</a>
-                </p>
+                <a target="_blank" href="https://sensorgarden.cooperkyle.com/">This site is no longer available</a>
+                    </p>
+                    <p>
+                        After running this site for a few years, many of the sensors have become warn out and no longer function properly.
+                        Another issue is that Raspberry Pis have become almost impossible to obtain, and so the site is not longer live
+                    </p>
             </div>
         </div>
     </div>
@@ -29,21 +32,24 @@
         <div class="card-content">
             <div class="content">
                 <h2 class="has-text-centered">
-                <a target="_blank" href="https://github.com/kc8/piawaredump1090wrapper">
-                Pi Aware Python Wrapper
-                </a>
+                    <a target="_blank" href="https://github.com/kc8/piawaredump1090wrapper">
+                        Pi Aware Python Wrapper
+                    </a>
                 </h2>
                 <figure class="image is-128-128">
                     <img src="{{site.baseurl}}/assets/img/projects/piaware.png" />
                 </figure>
                 <p class="has-text-left">
-            This is a Python wrapper for the PiAware/dump1090 ADBS library. 
-            PiAware uses a Raspberry Pi, an Antenna, SDR and some filtering to track flights. 
-            All aircraft in the USA must transmit an ADBS single, which is then picked up by the Pi. 
-            The module that built in Python requests information from the Raspberry Pi via a RESTful request. 
-            Returning a list of all aircraft the PiAware is reading. 
-            Check out more about PiAware <a href="https://flightaware.com/adsb/piaware/build">here</a>
+                    This is a Python wrapper for the PiAware/dump1090 ADBS library. 
+                    PiAware uses a Raspberry Pi, Antenna, SDR and some filtering to track flights. 
+                    All aircraft in the USA must transmit an ADBS single, which is then picked up by the Pi. 
+                    This module built in Python requests information from the host Raspberry Pi via a RESTful request. 
+                    Returning a list of all aircraft the Raspberry Pi (PiAware) is reading. 
+                    Check out more about PiAware <a href="https://flightaware.com/adsb/piaware/build">here</a>
                 </p>
+                    <p>
+                        This project is not longer live due to the host raspberry pi dying and not replacements being available
+                    </p>
             </div>
         </div>
     </div>
@@ -51,21 +57,21 @@
         <div class="card-content">
             <div class="content">
                 <h2 class="has-text-centered">
-                <a target="_blank" href="https://github.com/kc8/MPI_Scatter_Project">
-                MPI Multi-Threading Summation Program
-                </a>
+                    <a target="_blank" href="https://github.com/kc8/MPI_Scatter_Project">
+                        MPI Multi-Threading Summation Program
+                    </a>
                 </h2>
                 <figure class="image is-128-128">
                     <img src="{{site.baseurl}}/assets/img/projects/MPI_Project.png" />
                 </figure>
                 <p class="has-text-left">
-                A program using Message Passing Interface (MPI) with C. 
-                MPI is designed to create parallel processes in C allowing for the exchange of information between the processes. 
-                This project uses the MPI_Scatter and MPI_Gather routines to distribute data. 
-                My program asks the user for an amount of integers N, randomly creates the integers and adds them to an array. 
-                The array is then divided amongst N subsets (default is 4) and then each array is sent to a process. 
-                The process calculates the total for the sub set then sends it back to the main process were the main process totals the rest of the arrays. 
-                This project taught the uses of pointers with malloc and alloc, parallel processing, and arrays and helped develop my skills in C.
+                    A program using Message Passing Interface (MPI) with C. 
+                    MPI is designed to create parallel processes in C allowing for the exchange of information between the processes. 
+                    This project uses the MPI_Scatter and MPI_Gather routines to distribute data. 
+                    My program asks the user for an amount of integers N, randomly creates the integers and adds them to an array. 
+                    The array is then divided amongst N subsets (default is 4) and then each array is sent to a process. 
+                    The process calculates the total for the sub set then sends the result back to the main process were the main process totals the rest of the arrays. 
+                    This project taught the uses of pointers with malloc and alloc, parallel processing, and arrays and helped develop better understand the C ecosystem.
                 </p>
             </div>
         </div>

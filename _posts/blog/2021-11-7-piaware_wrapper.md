@@ -63,7 +63,7 @@ The green board with the red light in the top right-hand corner is the Raspberry
 This is the hardware component that takes a signal (or frequency) and essentially 
 "captures" it with the help from an antenna. 
 It then feeds that data into a computer where the user can use various tools 
-to analyze the frequncy data. An SDR device is able to capute this frequency. 
+to analyze the frequency data. An SDR device is able to capute this frequency. 
 
 After installing the PiAware software we can see most air traffic within the area. 
 However, I wanted to be able to create other projects using this information and 
@@ -115,4 +115,4 @@ for i in aircraft:
 If you are interested in learning more about this or want to help with the GitHub project, 
 feel free to download it and check it out. 
 You will need to setup a PiAWare before you do this. 
-If you are intrested check out some of the lins in my blog on how to do this or click [here](https://flightaware.com/adsb/piaware/install).
+If you are interested check out some of the lines in my blog on how to do this or click [here](https://flightaware.com/adsb/piaware/install).

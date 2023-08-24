@@ -77,7 +77,7 @@ Make sure you know how middleware works before continuing as not everything is e
 
 Crete a piece of middleware like in the example below.
 
-1. Get the endpoint that the API wants to communicate with, if nulll 
+1. Get the endpoint that the API wants to communicate with, if null
 you can throw an exception. This, usually, means that you added middleware into the middleware 
 stack incorrectly.
 2. See if the attribute is attached.

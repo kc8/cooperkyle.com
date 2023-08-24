@@ -8,7 +8,9 @@ excerpt_separator: <!--more-->
 
 ---
 
-The most basic method of parsing a obj file exported from blender. This guide uses C/C++ without any additional libraries. We try to stick with raw types. For example most guides will have you put the vertices in a a Vector3\<Float\>. In this guide we are doing both. We are parsing into a custom vf3 and then flattening them into an array and use a stride of 3. 
+The most basic method of parsing a obj file exported from blender. This guide uses C/C++ without any additional libraries. 
+We try to stick with raw types. For example most guides will have you put the vertices in a a Vector3\<Float\>. 
+In this guide we are doing both. We are parsing into a custom vf3 and then flattening them into an array and use a stride of 3. 
 <!--more-->
 
 
