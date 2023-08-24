@@ -15,7 +15,7 @@ C# Async and Await Techniques and ideas
 
 ## Gotchas
 - async await wraps the function in a 100 byte size class 
-- **Await all tasks**: Always await a Task because if an expection occurs it will be swallowed by the task and we will never know. This is because the C# behind the scenes creates a class to handle our operation and wraps the call in a try{} catch {} 
+- **Await all tasks**: Always await a Task because if an exception occurs it will be swallowed by the task and we will never know. This is because the C# behind the scenes creates a class to handle our operation and wraps the call in a try{} catch {} 
 - Do not use ```.wait()```. Just better to use ```await function()```
 	- This will through an aggregate exception and lock the main thread
 	- ```.GetAwaiter().GetResult()``` is similar however, this will return the result and run synchronously

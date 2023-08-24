@@ -1,5 +1,5 @@
 - name: Home
-  linke : / 
+  link: / 
 - name: About
   link: /about.html
 - name: Posts
@@ -8,3 +8,5 @@
   link: /projects.html
 - name: Notes 
   link: /Notes.html
+- name: InfoSources 
+  link: /infoSources.html
