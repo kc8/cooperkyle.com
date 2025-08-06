@@ -4,29 +4,4 @@ layout: default
 title: Notes 
 
 ---
-<h2>Here are notes from lectures, conferences, talks, books etc</h2>
-<p>
-    <strong>Disclaimer</strong> These notes are unformatted, based 
-    on topics I found interesting and wanted to learn more about.
-    They most certainly contain typos/grammatical errors and maybe some 
-    inaccuracies. 
-</p>
-
-{% for cat in site.posts %} 
-{% if cat.categories contains 'notes' %}
-    <div class="card p-0 m-5 has-background-light">
-        <div class="card-content">
-            <div class="content">
-                <h2 class="has-text-centered">
-                <a href="{{ cat.url }}">
-                {{ cat.title }}
-                </a>
-                </h2>
-                <p class="has-text-left">
-                    {{ cat.excerpt }}
-                </p>
-            </div>
-        </div>
-    </div>
-{% endif %}
-{% endfor %}
+<h2>Moved to posts</h2>

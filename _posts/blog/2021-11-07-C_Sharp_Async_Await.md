@@ -3,7 +3,7 @@
 layout: post
 title: C# Async and Await
 author: Kyle Cooper
-category: notes
+category: blog 
 excerpt_separator: <!--more-->
 
 ---
