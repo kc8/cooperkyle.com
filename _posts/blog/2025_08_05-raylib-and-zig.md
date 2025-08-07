@@ -4,7 +4,8 @@ title: A Hacky Way to Use raylib in Zig
 layout: post
 author: Kyle Cooper
 category: blog 
-excerpt_separator: 
+excerpt_separator: <!--more-->
+
 ---
 
 HACK: Getting raylib and Zig to work together
