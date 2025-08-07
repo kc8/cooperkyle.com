@@ -12,12 +12,12 @@ HACK: Getting raylib and Zig to work together
 <!--more-->
 
 Lets say you want to use the [raylib](https://www.raylib.com/) with Zig. Well, at least as of writing, there is a build.zig  
-in the rayib project. 
+in the raylib project. 
 
 You will need the following versions of raylib and Zig:
 
 *Version of Zig*:0.14.0
-*Version of rayib*: [5.5](https://github.com/raysan5/raylib/tree/5.5)
+*Version of raylib*: [5.5](https://github.com/raysan5/raylib/tree/5.5)
 *OS: Ubuntu 24 LTS*
 
 There is also a method to do that with the zon package manager, I have not tried this. 
@@ -333,7 +333,7 @@ index 5c2ac77c..127243da 100644
 - Update the version of zig.
 - Re-add some dynamic linking
 - Update how macros are defined in the new zig build system
-- Needing to change some of the file paths for c files to understand the third_party directory it now lives in 
+- Need to change some of the file paths for c files to understand the third_party directory it now lives in 
 - Update some of the paths for the Wayland code
 - Changing visibility of methods so that our build.zig can call into raylibs build.zig
 
@@ -377,7 +377,7 @@ const rLib = @cImport({
 });
 ```
 
-However, this can cause issues with how #defined structs (and more) are defined inside of raylib. For instance a rMath.Vector3 is now now the same as a rLib.Vector3. Something to keep in mind.
+However, this can cause issues with how #defined structs (and more) are defined inside of raylib. For instance a rMath.Vector3 is now the same as a rLib.Vector3. Something to keep in mind.
 
 
 # The full code for raylibs to work in your project
@@ -488,7 +488,7 @@ pub fn compileRaylib(b: *std.Build, target: std.Build.ResolvedTarget, optimize: 
     }
 
     if (options.config.len > 0) {
-        // Sets a flag indiciating the use of a custom `config.h`
+        // Sets a flag indicating the use of a custom `config.h`
         try raylib_flags_arr.append("-DEXTERNAL_CONFIG_FLAGS");
 
         // Splits a space-separated list of config flags into multiple flags
@@ -739,7 +739,7 @@ pub const Options = struct {
 
     pub fn getOptions(b: *std.Build) Options {
         return .{
-            .platform = b.option(PlatformBackend, "platform", "Choose the platform backedn for desktop target") orelse defaults.platform,
+            .platform = b.option(PlatformBackend, "platform", "Choose the platform backend for desktop target") orelse defaults.platform,
             .raudio = b.option(bool, "raudio", "Compile with audio support") orelse defaults.raudio,
             .rmodels = b.option(bool, "rmodels", "Compile with models support") orelse defaults.rmodels,
             .rtext = b.option(bool, "rtext", "Compile with text support") orelse defaults.rtext,

@@ -112,7 +112,7 @@ typedef struct MeshStructureAttributes
 {
     LoadedObj *asset; // reference to the obj, if ytou need
     
-    ui32* indices; //our vertex indicies
+    ui32* indices; //our vertex indices
     f32* verticies; // the vertexes in an array 
     vf3* textures;
     vf3* norms;
@@ -126,7 +126,7 @@ typedef struct MeshStructureAttributes
 
 	//keep stride info if you need, really this is usually 3 anyway 
     ui32 faceStride = 3;
-    // The # of indicies in the faces, that represent a vert
+    // The # of indices in the faces, that represent a vert
     ui32 indiciesCountForVerts;
 } MeshStructureAttributes;
 ```
@@ -249,7 +249,7 @@ ParseObjFileContents(memory_arena *memArena, LoadedObj meshObjFile)
             ParseVertsFromLoadedObjToVF3AndAppend(norms, result->norms, result->normalCount, 3);
         }
         {
-			// Here is where we go through our faces or indicies
+			// Here is where we go through our faces or indices
             contents = meshObjFile.contents;
             contents += firstFaceIndex; 
             char* faces = contents; 
@@ -263,7 +263,7 @@ ParseObjFileContents(memory_arena *memArena, LoadedObj meshObjFile)
             { 
                 i32 num = 0;
                 b32 updated = false;
-				// since we want to only get the uints from the face indicies (not f 
+				// since we want to only get the uints from the face indices (not f 
 				// or ' ' or / etc) we need to check if the number is a num
                 while (IsNum(*faces))
                 { 
@@ -284,10 +284,10 @@ ParseObjFileContents(memory_arena *memArena, LoadedObj meshObjFile)
         }
     }
 
-	// The next function will flatten our indicies and verts as we need
+	// The next function will flatten our indices and verts as we need
     result->indices = FlattenIndiciesFromObjMesh(memArena, result);
 	// With this function we flatten the vf3 array we created earlier. This might 
-	// not be the most efficent way of creating this array if you ONLY want this 
+	// not be the most eddicient way of creating this array if you ONLY want this 
 	// type of array
     result->verticies = FlattenVerts(memArena, result);
     return result;
@@ -364,7 +364,7 @@ You can use whatever you fell comfortable with. I use a 'memory arena' to push o
 1. Ideally, we would just forgo any method of putting this into an array of vf3 and just use a array of floats for the vertex
 	1. With this we would also pack the vertex array, normals and texture cords into a single array. Then just use AttribArray in Opengl and give an offset for each vertex
 1. Not all blender obj files are the same and we may want to account for this, but we are not looking for this kind of solution here
-2. There are potentially some performance improvements that we could do. However, the best would be to binarize the data and create our on assets pack. After all, these assets while be a 'static' part of our game
+2. There are potentially some performance improvements that we could do. However, the best would be to binarize the data and create our assets pack. After all, these assets will be a 'static' part of our game
 
 ## References
 - [Wikipedia](https://en.wikipedia.org/wiki/Wavefront_.obj_file)

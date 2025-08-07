@@ -17,10 +17,10 @@ C# Async and Await Techniques and ideas
 - async await wraps the function in a 100 byte size class 
 - **Await all tasks**: Always await a Task because if an exception occurs it will be swallowed by the task and we will never know. This is because the C# behind the scenes creates a class to handle our operation and wraps the call in a try{} catch {} 
 - Do not use ```.wait()```. Just better to use ```await function()```
-	- This will through an aggregate exception and lock the main thread
+	- This will throw an aggregate exception and lock the main thread
 	- ```.GetAwaiter().GetResult()``` is similar however, this will return the result and run synchronously
 - If you do not need to return to the calling thread, you can use ```await myFunction.ConfigureAwait(false)``` at the end of the function which will tell the context to use any available thread. This is nice if you do not need to go back to the UI thread for anything, keeping it free. If the there is no context, then it won't matter (this is true in .NET Core)
-	- Dont use this if you need to return to the calling thread
+	- Don't use this if you need to return to the calling thread
 - If a function uses async await and returns an awaited call you can just return the task. This reduces context switching. Do not do this if you are not returning an awaitable, or the code paths do not always guarantee the awaitable task return type. So instead of awaiting what is returned in the example below: 
  ```c#
 	 Task<ReturnType GetSomething(string nothing)
@@ -54,7 +54,7 @@ async ValueTask<string> SomethingFromNothing(string nothing)
 	var task2 = Task.Run( () => true); 
 	var task2 = Task.Run( () => true); 
 	
-	await Task.WhhenAll(task1, task2);
+	await Task.WhenAll(task1, task2);
 	
 	var result = await task1.configureAwait(false); 
 ```
@@ -78,9 +78,9 @@ public SomeClass()
 
 async void Refresh() 
 {
-	// Calling thread runs the below and retrns back to the try catch above
+	// Calling thread runs the below and returns back to the try catch above
 	await DoSomething(); 
-	//When this triggers, we will never be able to catch it because its happens in another thread
+	//When this triggers, we will never be able to catch it because it's happeing in another thread
 	throw new Exception(); 
 }
 ```

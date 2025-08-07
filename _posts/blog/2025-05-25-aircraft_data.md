@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: Looking up Aircaraft Data 
+title: Looking up Aircraft Data 
 author: Kyle Cooper
 category: blog 
 excerpt_separator: <!--more-->
@@ -20,7 +20,7 @@ was no way to translate the raw ID of the aircraft into registration (or its tai
 I found an interesting and cost-effective 'lookup table' for aircraft data So I built [one](https://github.com/kc8/get-aricraft-data#)
 
 The idea of it is to download the publicly available registry data for all aircraft in the United States [from the FAAs website](https://registry.faa.gov/database/ReleasableAircraft.zip)
-Then store this in  SQLLite database inside a Docker container and make it available via a REST call. The docker container is important as anytime 
+Then store this in  SQLite database inside a Docker container and make it available via a REST call. The docker container is important as anytime 
 you want to refresh the table with new data, just restart the container and it rebuilds the database with the newly refreshed data.
 
 From here you can get the tail number and the prefix for the number:

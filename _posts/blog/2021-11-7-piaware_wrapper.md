@@ -42,7 +42,7 @@ If you are interested in setting one of these up in your area, check out [this g
 ### Below is an example of what is displayed in the browser. 
 
 ***If you look closely at the image, we are not to far away from Boston, 
-a very busy airport, however since this was taken during the hight of the pandemic, there is 
+a very busy airport, however since this was taken during the height of the pandemic, there is 
 almost not air traffic***
 
 ![image of Flightaware](https://firebasestorage.googleapis.com/v0/b/blog-3ac4f.appspot.com/o/sbmSSBa413.png?alt=media&token=e5964677-5529-4ba6-abf1-c4797ea6cb65)
@@ -63,7 +63,7 @@ The green board with the red light in the top right-hand corner is the Raspberry
 This is the hardware component that takes a signal (or frequency) and essentially 
 "captures" it with the help from an antenna. 
 It then feeds that data into a computer where the user can use various tools 
-to analyze the frequency data. An SDR device is able to capute this frequency. 
+to analyze the frequency data. An SDR device is able to capture this frequency. 
 
 After installing the PiAware software we can see most air traffic within the area. 
 However, I wanted to be able to create other projects using this information and 
@@ -95,7 +95,7 @@ Such as altitude, heading, speed and more. A diagram of its operation is below.
 ![Diagram of python wrapper operation](https://firebasestorage.googleapis.com/v0/b/blog-3ac4f.appspot.com/o/python_piaware_wrapper%2FPiAware%20Basic%20Diagram.png?alt=media&token=cfaacacb-90f7-4026-a698-d84e55b5a517)
 
 The following is an example of using the the code to display all the information that an aircraft has. 
-Anything with None will represent that the information was not present when the PiAware saw the aircraft. This is usually due to PiAware is getting a weak signal frowm the aircraft or the aircraft was very recently detected by the PiAware and has not downloaded all the information yet.
+Anything with None will represent that the information was not present when the PiAware saw the aircraft. This is usually due to PiAware is getting a weak signal from the aircraft or the aircraft was very recently detected by the PiAware and has not downloaded all the information yet.
 
 ![Example output](https://firebasestorage.googleapis.com/v0/b/blog-3ac4f.appspot.com/o/python_piaware_wrapper%2FQuery_with_output_display.png?alt=media&token=077c334f-2fcb-4660-99f1-564c8ed322e1)
 
