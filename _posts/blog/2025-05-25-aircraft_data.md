@@ -11,16 +11,12 @@ excerpt_separator: <!--more-->
 A lookup for local flight data collected via FlightAware or "Piaware"
 <!--more-->
 
-In a prior blog post I talked about a 'piaware' system that reads ADS-B data. 
+In a prior blog post I talked about a 'piaware' system that reads ADS-B data. However, this sytem does not easily allow you to translate to translate a given ICAO (aircraft identifier) into a registered tail number (often called the tail number).
 
-An additional improvement I made to this setup was the ability to collect flights in long-term storage. I designed another system 
-to do this (but that is not what this post is about). However, when getting the raw data for the aircraft, there 
-was no way to translate the raw ID of the aircraft into registration (or its tail numbers). 
+I found a 'lookup table' for aircraft data that can help translate these numbers. I then build a small utility around that [here](https://github.com/kc8/get-aircraft-data#)
 
-I found an interesting and cost-effective 'lookup table' for aircraft data So I built [one](https://github.com/kc8/get-aricraft-data#)
-
-The idea of it is to download the publicly available registry data for all aircraft in the United States [from the FAAs website](https://registry.faa.gov/database/ReleasableAircraft.zip)
-Then store this in  SQLite database inside a Docker container and make it available via a REST call. The docker container is important as anytime 
+It works like this: download the publicly available registry data for all aircraft in the United States from the FAA's website: https://registry.faa.gov/database/ReleasableAircraft.zip
+Then store this in a SQLite database inside a Docker container and make it available via a REST call. The docker container is important as anytime 
 you want to refresh the table with new data, just restart the container and it rebuilds the database with the newly refreshed data.
 
 From here you can get the tail number and the prefix for the number:
